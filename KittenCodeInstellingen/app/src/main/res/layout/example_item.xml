@@ -28,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Creator Name"
+            android:layout_marginStart="30dp"
             android:textColor="@android:color/black"
             android:textSize = "20sp"/>
 
@@ -36,6 +37,7 @@
             android:id="@+id/text_view_likes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
             android:text="Like:"/>
 
     </LinearLayout>

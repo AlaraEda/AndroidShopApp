@@ -28,8 +28,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements ExampleAdapter.OnItemClickListener {
-    //Background-Veranderen
-    View view;
+    View view;                                              //Background-Veranderen
 
     //Informatie die word doorgestuurd naar de detail-page
     public static final String EXTRA_URL = "imageUrl";
@@ -38,8 +37,8 @@ public class MainActivity extends AppCompatActivity implements ExampleAdapter.On
 
     private RecyclerView mRecyclerView;
     private ExampleAdapter mExampleAdapter;
-    private ArrayList<ExampleItem> mExampleList; //Hier komt onze json data in.
-    private RequestQueue mRequestQueue; //De RequestQ die je nodig hebt voor volley
+    private ArrayList<ExampleItem> mExampleList;        //Hier komt onze json data in.
+    private RequestQueue mRequestQueue;                 //De RequestQ die je nodig hebt voor volley
 
 
 
@@ -50,11 +49,11 @@ public class MainActivity extends AppCompatActivity implements ExampleAdapter.On
 
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this)); //Want we willen dat onze nieuwe items linear worden neegezet.
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));  //Want we willen dat onze nieuwe items linear worden neegezet.
 
         mExampleList = new ArrayList<>();
 
-        mRequestQueue = Volley.newRequestQueue(this); //We krijgen een nieuwe requestQ waar we onze json request in kunnen voegen.
+        mRequestQueue = Volley.newRequestQueue(this);                   //We krijgen een nieuwe requestQ waar we onze json request in kunnen voegen.
         parseJson();
 
     }
@@ -67,25 +66,22 @@ public class MainActivity extends AppCompatActivity implements ExampleAdapter.On
         return true;
     }
 
-    //Checkt welke item van de menu-bar is aangeklikt.
+    //Checkt welke kleur van de menu-bar is aangeklikt.
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
-//            case R.id.item3:
-//                Toast.makeText(this, "Item3 selected", Toast.LENGTH_SHORT).show();
-//                return true;
             case R.id.subitem1:
-                Toast.makeText(this, "subitem1 selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "LightMode selected", Toast.LENGTH_SHORT).show();
                 view = this.getWindow().getDecorView();
                 view.setBackgroundResource(R.color.white);
                 return true;
             case R.id.subitem2:
-                Toast.makeText(this, "subitem2 selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "DarkMode selected", Toast.LENGTH_SHORT).show();
                 view = this.getWindow().getDecorView();
                 view.setBackgroundResource(R.color.black);
                 return true;
             case R.id.subitem3:
-                Toast.makeText(this, "subitem3 selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "YoloMode selected", Toast.LENGTH_SHORT).show();
                 view = this.getWindow().getDecorView();
                 view.setBackgroundResource(R.color.red);
                 return true;
@@ -98,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements ExampleAdapter.On
         //Waar we onze Json vandaan halen
         //https://pixabay.com/api/?key={ KEY }&q=yellow+flowers&image_type=photo
         //{Key} is je eigen toegangscode, q= "wat je wilt vinden"
-        String url = "https://pixabay.com/api/?key=5303976-fd6581ad4ac165d1b75cc15b3&q=movies&image_type=photo";
+        String url = "https://pixabay.com/api/?key=5303976-fd6581ad4ac165d1b75cc15b3&q=dress&image_type=photo";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
@@ -146,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements ExampleAdapter.On
         mRequestQueue.add(request);
     }
 
-    //Code voor wanneer je op een item clickt
+    //Stuurt je door naar voor wanneer je op een item klikt.
     @Override
     public void onItemClick(int position) {
         Intent detailIntent = new Intent(this, DetailActivity.class);
