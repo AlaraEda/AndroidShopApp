@@ -19,7 +19,7 @@ public class ShopItem {
     }
 
     public String getCreator(){
-        return mCreator;
+        return "Username: " + mCreator;
     }
 
     public int getLikeCount(){
