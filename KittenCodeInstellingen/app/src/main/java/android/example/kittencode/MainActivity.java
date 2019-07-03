@@ -71,20 +71,22 @@ public class MainActivity extends AppCompatActivity implements ExampleAdapter.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
-            case R.id.item1:
-                Toast.makeText(this, "Item1 selected", Toast.LENGTH_SHORT).show();
+//            case R.id.item3:
+//                Toast.makeText(this, "Item3 selected", Toast.LENGTH_SHORT).show();
+//                return true;
+            case R.id.subitem1:
+                Toast.makeText(this, "subitem1 selected", Toast.LENGTH_SHORT).show();
                 view = this.getWindow().getDecorView();
                 view.setBackgroundResource(R.color.white);
                 return true;
-            case R.id.item3:
-                Toast.makeText(this, "Item3 selected", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.subitem1:
-                Toast.makeText(this, "subitem1 selected", Toast.LENGTH_SHORT).show();
-                view.setBackgroundResource(R.color.black);
-                return true;
             case R.id.subitem2:
                 Toast.makeText(this, "subitem2 selected", Toast.LENGTH_SHORT).show();
+                view = this.getWindow().getDecorView();
+                view.setBackgroundResource(R.color.black);
+                return true;
+            case R.id.subitem3:
+                Toast.makeText(this, "subitem3 selected", Toast.LENGTH_SHORT).show();
+                view = this.getWindow().getDecorView();
                 view.setBackgroundResource(R.color.red);
                 return true;
             default:
