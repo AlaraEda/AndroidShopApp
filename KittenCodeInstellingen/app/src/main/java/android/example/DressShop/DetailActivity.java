@@ -1,8 +1,11 @@
 package android.example.DressShop;
 
 import android.content.Intent;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,6 +16,7 @@ import static android.example.DressShop.MainActivity.EXTRA_LIKES;
 import static android.example.DressShop.MainActivity.EXTRA_URL;
 
 public class DetailActivity extends AppCompatActivity {
+//Hier moeten de buttons voor GPS
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +32,11 @@ public class DetailActivity extends AppCompatActivity {
         TextView textViewCreator = findViewById(R.id.text_view_creator_detail);
         TextView textViewLikes = findViewById(R.id.text_view_like_detail);
 
+        //Wat je ziet
         Picasso.with(this).load(imageUrl).fit().centerInside().into(imageView);
         textViewCreator.setText(creatorName);
         textViewLikes.setText("Likes: "+ likeCount);
+
+
     }
 }

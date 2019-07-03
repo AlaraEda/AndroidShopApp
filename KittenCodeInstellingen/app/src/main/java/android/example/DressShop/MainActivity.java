@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
     private RequestQueue mRequestQueue;                 //De RequestQ die je nodig hebt voor volley
 
 
-
+    //Zorgen dat alle foto's op volgorde omlaag staat
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
 
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));  //Want we willen dat onze nieuwe items linear worden neegezet.
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));  //Onze nieuwe items linear worden neegezet.
 
         mExampleList = new ArrayList<>();
 
@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
         }
     }
 
+    //De code voor de API
     private void parseJson(){
         //Waar we onze Json vandaan halen
         //https://pixabay.com/api/?key={ KEY }&q=yellow+flowers&image_type=photo
@@ -139,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
         mRequestQueue.add(request);
     }
 
-    //Stuurt je door naar voor wanneer je op een item klikt.
+    //Stuurt je door naar item-pagina.
     @Override
     public void onItemClick(int position) {
         Intent detailIntent = new Intent(this, DetailActivity.class);
