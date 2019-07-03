@@ -1,7 +1,6 @@
-package android.example.kittencode;
+package android.example.DressShop;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,8 +9,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -27,7 +24,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements ExampleAdapter.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements ShopAdapter.OnItemClickListener {
     View view;                                              //Background-Veranderen
 
     //Informatie die word doorgestuurd naar de detail-page
@@ -36,8 +33,8 @@ public class MainActivity extends AppCompatActivity implements ExampleAdapter.On
     public static final String EXTRA_LIKES = "likeCount";
 
     private RecyclerView mRecyclerView;
-    private ExampleAdapter mExampleAdapter;
-    private ArrayList<ExampleItem> mExampleList;        //Hier komt onze json data in.
+    private ShopAdapter mExampleAdapter;
+    private ArrayList<ShopItem> mExampleList;        //Hier komt onze json data in.
     private RequestQueue mRequestQueue;                 //De RequestQ die je nodig hebt voor volley
 
 
@@ -115,13 +112,13 @@ public class MainActivity extends AppCompatActivity implements ExampleAdapter.On
                                 int likeCount = hit.getInt("likes");
 
                                 //Voeg de item toe aan de lijst
-                                mExampleList.add(new ExampleItem(imageURL, creatorName, likeCount));
+                                mExampleList.add(new ShopItem(imageURL, creatorName, likeCount));
                             }
 
                             //Om recycleview te vullen hebben we een adapter nodig.
-                            //Stuurt de json data van ExampleList door naar ExampleAdapter
-                            mExampleAdapter = new ExampleAdapter(MainActivity.this, mExampleList);
-                            //Stuurt de json data van ExampleAdapter door naar de RecyclerView waar het zichtbaar is voor ons.
+                            //Stuurt de json data van ExampleList door naar ShopAdapter
+                            mExampleAdapter = new ShopAdapter(MainActivity.this, mExampleList);
+                            //Stuurt de json data van ShopAdapter door naar de RecyclerView waar het zichtbaar is voor ons.
                             mRecyclerView.setAdapter(mExampleAdapter);
 
                             //Voor Click-Handler
@@ -146,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements ExampleAdapter.On
     @Override
     public void onItemClick(int position) {
         Intent detailIntent = new Intent(this, DetailActivity.class);
-        ExampleItem clickedItem = mExampleList.get(position);
+        ShopItem clickedItem = mExampleList.get(position);
 
         detailIntent.putExtra(EXTRA_URL, clickedItem.getImageUrl());
         detailIntent.putExtra(EXTRA_CREATOR, clickedItem.getCreator());

@@ -1,12 +1,12 @@
-package android.example.kittencode;
+package android.example.DressShop;
 
 //Verander naam van class.
-public class ExampleItem {
+public class ShopItem {
     private String mImageUrl;
     private String mCreator;
     private int mLikes;
 
-    public ExampleItem(String imageUrl, String creator, int likes){
+    public ShopItem(String imageUrl, String creator, int likes){
         //De parameters die zijn meegestuurd staan gelijk aan de variabeles die je hebt aangemaakt.
         mImageUrl = imageUrl;
         mCreator = creator;

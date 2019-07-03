@@ -1,4 +1,4 @@
-package android.example.kittencode;
+package android.example.DressShop;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,9 +13,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder> {
+public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ExampleViewHolder> {
     private Context mContext;
-    private ArrayList<ExampleItem> mExampleList;
+    private ArrayList<ShopItem> mExampleList;
 
     //Click variabel
     private OnItemClickListener mListener;
@@ -31,7 +30,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
     }
 
     //Constructor voor adapter
-    public ExampleAdapter(Context context, ArrayList<ExampleItem> exampleList){
+    public ShopAdapter(Context context, ArrayList<ShopItem> exampleList){
         //variabelen krijgt de inhoud van de parameters
         mContext = context;
         mExampleList = exampleList;
@@ -49,10 +48,10 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
     @Override
     public void onBindViewHolder(ExampleViewHolder holder, int position) {
         //Gebruik de int position om items uit de array-list te halen
-        ExampleItem currentItem = mExampleList.get(position);
+        ShopItem currentItem = mExampleList.get(position);
 
         //Gebruik de "CurrentItem variabele" om imageurl en text eruit te krijgen
-        //We hadden een class aangemaakt met ExampleItem en daar halen we de variabels weer uit.
+        //We hadden een class aangemaakt met ShopItem en daar halen we de variabels weer uit.
         String imageUrl = currentItem.getImageUrl();
         String creatorName = currentItem.getCreator();
         int likeCount = currentItem.getLikeCount();

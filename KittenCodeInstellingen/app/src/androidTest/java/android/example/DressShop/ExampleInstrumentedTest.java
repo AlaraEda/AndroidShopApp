@@ -1,4 +1,4 @@
-package android.example.kittencode;
+package android.example.DressShop;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

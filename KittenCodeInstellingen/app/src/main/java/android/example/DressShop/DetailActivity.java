@@ -1,4 +1,4 @@
-package android.example.kittencode;
+package android.example.DressShop;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +8,9 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import static android.example.kittencode.MainActivity.EXTRA_CREATOR;
-import static android.example.kittencode.MainActivity.EXTRA_LIKES;
-import static android.example.kittencode.MainActivity.EXTRA_URL;
+import static android.example.DressShop.MainActivity.EXTRA_CREATOR;
+import static android.example.DressShop.MainActivity.EXTRA_LIKES;
+import static android.example.DressShop.MainActivity.EXTRA_URL;
 
 public class DetailActivity extends AppCompatActivity {
 

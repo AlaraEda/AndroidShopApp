@@ -1,4 +1,4 @@
-package android.example.kittencode;
+package android.example.DressShop;
 
 import org.junit.Test;
 
