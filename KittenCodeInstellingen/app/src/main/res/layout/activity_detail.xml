@@ -11,7 +11,7 @@
         android:id="@+id/image_view_detail"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/text_view_creator_detail"
@@ -27,9 +27,34 @@
         android:id="@+id/text_view_like_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Likes: "
-        android:textSize="30sp"
         android:layout_marginStart="80dp"
-        android:layout_marginEnd="16dp"/>
+        android:layout_marginEnd="16dp"
+        android:text="Likes: "
+        android:textSize="30sp" />
+
+    <!--Request location-->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="40dp"
+        android:text="REQUEST LOCATION"
+        android:textAlignment="center" />
+
+    <!--Text waar coordinaten in komt te staan-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:background="#010014"
+        android:gravity="center"
+        android:text="Coordinates:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+
+        android:textColor="#ffffff" />
 
 </LinearLayout>
