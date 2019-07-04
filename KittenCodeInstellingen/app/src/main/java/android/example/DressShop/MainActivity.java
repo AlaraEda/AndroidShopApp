@@ -1,6 +1,7 @@
 package android.example.DressShop;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -70,6 +71,16 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
             case R.id.item1:
                 Intent canvas = new Intent(this, Canvas.class);
                 startActivity(canvas);
+            case R.id.item2:
+                String google = "https://www.zalando.nl/dameskleding-jurken/only/";
+                Uri webaddress = Uri.parse(google);                 //Verander de string in een URI
+                Intent GoToGoogle = new Intent(Intent.ACTION_VIEW, webaddress); //Bij de nieuwe intent creeeren we een Action View die we het URL mee sturen.
+
+                //Check of er een App op de telefoon staat die deze actie kan doen
+                if(GoToGoogle.resolveActivity(getPackageManager()) != null){    //Als er iets is op de telefoon die deze actie kan uitvoeren, geef dat ding dan de activity.
+                    startActivity(GoToGoogle);
+                }
+
             case R.id.subitem1:
                 Toast.makeText(this, "LightMode selected", Toast.LENGTH_SHORT).show();
                 view = this.getWindow().getDecorView();
