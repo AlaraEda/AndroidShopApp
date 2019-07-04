@@ -40,7 +40,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="40dp"
-        android:text="REQUEST LOCATION"
+        android:text="REQUEST MY LOCATION"
         android:textAlignment="center" />
 
     <!--Text waar coordinaten in komt te staan-->
