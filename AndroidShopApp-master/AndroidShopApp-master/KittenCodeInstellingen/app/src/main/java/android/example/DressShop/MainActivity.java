@@ -67,6 +67,9 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
+            case R.id.item1:
+                Intent canvas = new Intent(this, Canvas.class);
+                startActivity(canvas);
             case R.id.subitem1:
                 Toast.makeText(this, "LightMode selected", Toast.LENGTH_SHORT).show();
                 view = this.getWindow().getDecorView();

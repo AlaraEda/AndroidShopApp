@@ -2,9 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="android.example.DressShop">
     <!-- Vraag om Internet toestemming -->
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <!--Vraag om GPS Coordinaten-->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Vraag om GPS Coordinaten -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
@@ -15,8 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="android.example.DressShop.DetailActivity"></activity>
-        <activity android:name="android.example.DressShop.MainActivity">
+        <activity android:name=".Canvas"></activity>
+        <activity android:name=".CanvasActivity" />
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
