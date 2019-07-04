@@ -2,6 +2,7 @@ package android.example.DressShop;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -38,12 +40,16 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
     private ArrayList<ShopItem> mExampleList;        //Hier komt onze json data in.
     private RequestQueue mRequestQueue;                 //De RequestQ die je nodig hebt voor volley
 
+    private RelativeLayout RL;
 
     //Zorgen dat alle foto's op volgorde omlaag staat
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Lay-out veranderen bij intstellingen
+        RL = findViewById(R.id.relativeLayout);
 
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
@@ -71,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
             case R.id.item1:
                 Intent canvas = new Intent(this, Canvas.class);
                 startActivity(canvas);
+
             case R.id.item2:
                 String google = "https://www.zalando.nl/dameskleding-jurken/only/";
                 Uri webaddress = Uri.parse(google);                 //Verander de string in een URI
@@ -80,6 +87,10 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
                 if(GoToGoogle.resolveActivity(getPackageManager()) != null){    //Als er iets is op de telefoon die deze actie kan uitvoeren, geef dat ding dan de activity.
                     startActivity(GoToGoogle);
                 }
+
+            case R.id.item3:
+                Intent canva = new Intent(this, SettingsActivity.class);
+                startActivity(canva);
 
             case R.id.subitem1:
                 Toast.makeText(this, "LightMode selected", Toast.LENGTH_SHORT).show();
@@ -166,4 +177,21 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
 
         startActivity(detailIntent);
     }
+
+    //Wanneer je terug komt bij de app
+    @Override
+    protected void onResume() {
+        if (SettingsActivity.CHANGE_BC(this)) {
+            //if setting changed change background color
+            RL.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary));
+
+        } else if (!(SettingsActivity.CHANGE_BC(this))) {
+            RL.setBackgroundColor(ContextCompat.getColor(this, R.color.black));
+
+        }
+        super.onResume();
+    }
+
+
+
 }
