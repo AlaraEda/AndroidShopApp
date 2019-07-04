@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
     private RecyclerView mRecyclerView;
     private ShopAdapter mExampleAdapter;
     private ArrayList<ShopItem> mExampleList;        //Hier komt onze json data in.
-    private RequestQueue mRequestQueue;                 //De RequestQ die je nodig hebt voor volley
+    private RequestQueue mRequestQueue;              //De RequestQ die je nodig hebt voor volley
 
 
     //Zorgen dat alle foto's op volgorde omlaag staat
@@ -68,9 +68,13 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
+            //Canvas
             case R.id.item1:
                 Intent canvas = new Intent(this, Canvas.class);
                 startActivity(canvas);
+                return true;
+
+                //Website
             case R.id.item2:
                 String google = "https://www.zalando.nl/dameskleding-jurken/only/";
                 Uri webaddress = Uri.parse(google);                 //Verander de string in een URI
@@ -80,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
                 if(GoToGoogle.resolveActivity(getPackageManager()) != null){    //Als er iets is op de telefoon die deze actie kan uitvoeren, geef dat ding dan de activity.
                     startActivity(GoToGoogle);
                 }
-
+                
             case R.id.subitem1:
                 Toast.makeText(this, "LightMode selected", Toast.LENGTH_SHORT).show();
                 view = this.getWindow().getDecorView();

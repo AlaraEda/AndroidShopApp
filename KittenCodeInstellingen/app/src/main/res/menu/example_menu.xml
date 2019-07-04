@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!--ShopIcon-->
-    <item android:id="@+id/item2"
+    <item
+        android:id="@+id/item2"
         android:icon="@drawable/ic_local_mall"
         android:title="Item2"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always" />
 
     <!--Drawing-Icon-->
     <item android:id="@+id/item1"
