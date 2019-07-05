@@ -77,10 +77,10 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
                 startActivity(canvas);
                 return true;
 
-                //Website
+            //Website
             case R.id.item2:
                 String google = "https://www.zalando.nl/dameskleding-jurken/only/";
-                Uri webaddress = Uri.parse(google);                 //Verander de string in een URI
+                Uri webaddress = Uri.parse(google);                             //Verander de string in een URI
                 Intent GoToGoogle = new Intent(Intent.ACTION_VIEW, webaddress); //Bij de nieuwe intent creeeren we een Action View die we het URL mee sturen.
 
                 //Check of er een App op de telefoon staat die deze actie kan doen
@@ -88,8 +88,9 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
                     startActivity(GoToGoogle);
                 }
                 return true;
-                
-            case R.id.subitem1:
+
+            //Settings
+            case R.id.subitem4:
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                 return true;
 

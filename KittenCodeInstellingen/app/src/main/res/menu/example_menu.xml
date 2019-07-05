@@ -16,13 +16,9 @@
         app:showAsAction="ifRoom"/>
 
     <!--Icon wil not be shown in de actie-bar want "never"-->
-    <item android:title="Colors">
-        <item android:id="@+id/subitem1"
-            android:title="Settings"/>
-        <item android:id="@+id/subitem2"
-            android:title="Black"/>
-        <item android:id="@+id/subitem3"
-            android:title="Red"/>
-    </item>
+    <item android:id="@+id/subitem4"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"
+        app:showAsAction="ifRoom"/>
 
 </menu>
