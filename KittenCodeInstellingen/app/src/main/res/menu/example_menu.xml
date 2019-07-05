@@ -18,7 +18,7 @@
     <!--Icon wil not be shown in de actie-bar want "never"-->
     <item android:title="Colors">
         <item android:id="@+id/subitem1"
-            android:title="White"/>
+            android:title="Settings"/>
         <item android:id="@+id/subitem2"
             android:title="Black"/>
         <item android:id="@+id/subitem3"

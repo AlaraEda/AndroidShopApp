@@ -2,14 +2,17 @@ package android.example.DressShop;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -84,22 +87,12 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
                 if(GoToGoogle.resolveActivity(getPackageManager()) != null){    //Als er iets is op de telefoon die deze actie kan uitvoeren, geef dat ding dan de activity.
                     startActivity(GoToGoogle);
                 }
+                return true;
                 
             case R.id.subitem1:
-                Toast.makeText(this, "LightMode selected", Toast.LENGTH_SHORT).show();
-                view = this.getWindow().getDecorView();
-                view.setBackgroundResource(R.color.white);
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                 return true;
-            case R.id.subitem2:
-                Toast.makeText(this, "DarkMode selected", Toast.LENGTH_SHORT).show();
-                view = this.getWindow().getDecorView();
-                view.setBackgroundResource(R.color.black);
-                return true;
-            case R.id.subitem3:
-                Toast.makeText(this, "YoloMode selected", Toast.LENGTH_SHORT).show();
-                view = this.getWindow().getDecorView();
-                view.setBackgroundResource(R.color.red);
-                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -170,4 +163,24 @@ public class MainActivity extends AppCompatActivity implements ShopAdapter.OnIte
 
         startActivity(detailIntent);
     }
+
+    //after returning from settings activity execute this
+    protected void onResume() {
+
+
+        if (SettingsActivity.changeBackgroundColor(this)){
+            view = this.getWindow().getDecorView();
+            view.setBackgroundResource(R.color.black);
+            Toast.makeText(this, "DarkMode Selected", Toast.LENGTH_SHORT).show();
+        }
+
+        else if(!(SettingsActivity.changeBackgroundColor(this))){
+            view = this.getWindow().getDecorView();
+            view.setBackgroundResource(R.color.white);
+            Toast.makeText(this, "LightMode Selected", Toast.LENGTH_SHORT).show();
+        }
+
+        super.onResume();
+    }
 }
+
