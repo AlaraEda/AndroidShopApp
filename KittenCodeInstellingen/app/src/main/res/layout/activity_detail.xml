@@ -21,7 +21,7 @@
         android:layout_marginEnd="16dp"
         android:text="Creator Name"
         android:textColor="@android:color/black"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/text_view_like_detail"
@@ -30,7 +30,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginEnd="16dp"
         android:text="Likes: "
-        android:textSize="30sp" />
+        android:textSize="20sp" />
 
     <!--Request location-->
     <Button
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:text="REQUEST MY LOCATION"
         android:textAlignment="center" />
 
