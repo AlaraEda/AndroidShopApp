@@ -17,3 +17,9 @@ Als je hierop klikt kan je je eigen jurk designen/tekenen op het Canvas.
 Als je hierop klikt kan je dark-mode aan/uit zetten. Wanneer je de app afsluit worden de veranderingen opgeslagen.
 
 Als je op een van de afbeeldingen klikt, zie je de afbeelding en de gegevens van de afbeelding in het groot. Eronder zie je je eigen GPS-locatie zodat je kan weten hoe ver weg je bent van de winkel die waar de jurk word verkocht. 
+
+---
+```
+                                           ~ Life is a party ~
+                                              Dress like it!
+```
